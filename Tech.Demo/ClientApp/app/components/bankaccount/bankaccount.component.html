@@ -1,0 +1,41 @@
+<h3>This screen demonstrates basic CRUD capabilities using Angular controls.</h3>
+<h1>Bank Accounts</h1>
+
+
+<p *ngIf="!bankaccounts"><em>Loading/No Data...</em></p>
+
+
+<p-dataTable [value]="bankaccounts" [immutable]="false" [editable]="true" (onEditComplete)="onEditComplete($event.data)">
+
+    <p-column field="bankAccountNumber" header="Account Number" [editable]="false"></p-column>
+    <p-column field="balance" header="Balance" [editable]="false"></p-column>
+    <p-column field="customerFirstName" header="First Name" [editable]="true"></p-column>
+    <p-column field="customerLastName" header="Last Name" [editable]="true"></p-column>
+
+</p-dataTable>
+
+<div class="container row" style="padding-top:30px">
+    <h1>Add Account</h1>
+    <form [formGroup]="myForm" class="ng-untouched ng-pristine ng-invalid" novalidate (ngSubmit)="save(myForm.value, myForm.valid)">
+
+        <div class="form-group">
+            <label>Pick Customer</label>
+            <select formControlName="customer" id="customer" class="form-horizontal">
+                <option *ngFor="let customer of customers"
+                        [value]="customer.id">
+                    {{customer.firstName}}
+                </option>
+            </select>
+        </div>
+        <!--<div class="form-group">
+            <label>Balance</label>
+            <input type="text" formControlName="balance" class="form-control">
+            <small [hidden]="myForm.controls.balance.valid || (myForm.controls.balance.pristine && !submitted)">
+                balance is required (minimum 5 characters).
+            </small>
+        </div>-->
+        <button type="submit" class="btn btn-default">Add Bank Account</button>
+
+    </form>
+
+</div>

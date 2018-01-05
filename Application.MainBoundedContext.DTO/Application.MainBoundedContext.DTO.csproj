@@ -1,0 +1,19 @@
+<Project Sdk="Microsoft.NET.Sdk">
+
+  <PropertyGroup>
+    <TargetFramework>netcoreapp2.0</TargetFramework>
+    <AssemblyName>NLayerApp.Application.MainBoundedContext.DTO</AssemblyName>
+    <RootNamespace>NLayerApp.Application.MainBoundedContext.DTO</RootNamespace>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <PackageReference Include="AutoMapper" Version="6.1.1" />
+    <PackageReference Include="FluentValidation" Version="7.2.1" />
+    <PackageReference Include="Newtonsoft.Json" Version="10.0.3" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <ProjectReference Include="..\Domain.MainBoundedContext\Domain.MainBoundedContext.csproj" />
+  </ItemGroup>
+
+</Project>

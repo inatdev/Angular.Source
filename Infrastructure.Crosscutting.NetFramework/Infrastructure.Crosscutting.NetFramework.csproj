@@ -1,0 +1,20 @@
+<Project Sdk="Microsoft.NET.Sdk">
+
+  <PropertyGroup>
+    <TargetFramework>netcoreapp2.0</TargetFramework>
+    <AssemblyName>NLayerApp.Infrastructure.Crosscutting.NetFramework</AssemblyName>
+    <RootNamespace>NLayerApp.Infrastructure.Crosscutting.NetFramework</RootNamespace>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <PackageReference Include="AutoMapper" Version="6.1.1" />
+    <PackageReference Include="Microsoft.Extensions.DependencyModel" Version="2.0.0" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <ProjectReference Include="..\Infrastructure.Crosscutting\Infrastructure.Crosscutting.csproj" />
+  </ItemGroup>
+
+
+
+</Project>
